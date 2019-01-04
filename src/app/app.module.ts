@@ -15,6 +15,11 @@ import { FormsModule } from '@angular/forms';
 
 
 
+//Servicios
+import { ServiceModule } from './services/service.module';
+
+
+
 
 @NgModule({
   declarations: [
@@ -22,13 +27,13 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent
     
-    
   ],
   imports: [
     BrowserModule,
     PagesModule,
     APP_ROUTES,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
