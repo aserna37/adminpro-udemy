@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { retry } from 'rxjs/operators';
+ 
 
 declare function init_plugins();
 
