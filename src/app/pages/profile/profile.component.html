@@ -1,0 +1,42 @@
+<div class="row animated fadeIn">
+  <div class="col-md-7">
+    <div class="card card-body">
+        <h3 class="box-title m-b-0">Perfil del Usuario</h3>
+        <p class="text-muted m-b-30 font-13"> Información </p>
+
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <form ngNativeValidate #f="ngForm" (ngSubmit)=guardar(f.value)>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre de Usuario</label>
+                        <input [(ngModel)]="usuario.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre de Usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email de Usuario</label>
+                        <input [(ngModel)]="usuario.email" [disabled]="usuario.google" name="email" type="email" class="form-control" placeholder="Email de Usuario" required>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+                      <i class="fa fa-save"></i>
+                      Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-5">
+    <div class="card card-body" align="center">
+        <h3 class="box-title m-b-0">Fotografia del Usuario</h3>
+        <p class="text-muted m-b-30 font-13"> Información </p>
+        
+        <img *ngIf="!imagenTemp" [src]="usuario.img | imagen" class="w150" alt="">
+        <img *ngIf="imagenTemp" [src]="imagenTemp" class="w150" alt="">
+        
+        <input (change)="seleccionImagen($event.target.files[0])" type="file"  name="" id="">
+        <br><br>
+        <button (click)="cambiarImagen()" [disabled]="!imagenSubir" type="button" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+            <i class="fa fa-save"></i>
+            Actualizar Foto</button>
+        </div>
+        </div>
+</div>

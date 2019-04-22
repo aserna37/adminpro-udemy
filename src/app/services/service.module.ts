@@ -5,7 +5,8 @@ import { SettingsService,
          SharedService,
          SidebarService,
          UsuarioService,
-         LoginGuardGuard
+         LoginGuardGuard,
+         SubirArchivoService
        } from 'src/app/services/service.index';
 
 
@@ -16,6 +17,6 @@ import { SettingsService,
     CommonModule,
     HttpClientModule
   ],
-  providers: [SettingsService, SharedService, SidebarService, UsuarioService, LoginGuardGuard]
+  providers: [SettingsService, SharedService, SidebarService, UsuarioService, LoginGuardGuard, SubirArchivoService]
 })
 export class ServiceModule { }
